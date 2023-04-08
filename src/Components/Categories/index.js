@@ -1,18 +1,25 @@
 import React from "react";
-import Button from "@mui/material/Button";
-import { ButtonGroup } from "@mui/material";
+import Products from "../Products";
+import { useSelector } from "react-redux";
+import { filteredProducts } from "../../store/products";
+import Grid from "@mui/material/Grid"
 
 function Categories() {
-  return (
-  <>
-    <ButtonGroup>
-      <Button>Electronics</Button>
-      <Button>Food</Button>
-      <Button>Clothing</Button>
-    </ButtonGroup>
-  </>  
-   
+  const products = useSelector(filteredProducts);
+  return(
+    <>
+    <Grid container direction="row" justifycontent="space-around" alignItems="Center">
+
+      {products.map((products)=> {
+        <Grid xs={5}>
+        <Products product={products}/>
+      </Grid>
+      })}
+    </Grid>
+      </>
   )
+
+  
 }
 
 export default Categories;
