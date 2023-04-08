@@ -1,18 +1,18 @@
-import React from 'react'
-import Product from '../Product'
-import { useSelector } from "react-redux"
+import React from "react";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import  Typography  from '@mui/material/Typography';
 
-
-const Products = () => {
-
-    const products = useSelector((state)=>{
-        return state.products.products})
-    
-<section>
-    {products.map((product) => (
-        <Products key={product} product={product} />))}
-</section>
-    )
-}
+const Products = ( product ) => {
+    return(
+        <Card>
+        <CardContent>
+          <Typography variant="h5" component="div">{product.name}</Typography>
+          <Typography variant="body2" color="blue"> Price:{product.price}</Typography>
+          <Typography variant="body2" color="text.seconday"> Instock:{product.inStock}</Typography>
+        </CardContent>
+      </Card>
+    );
+};
 
 export default Products
