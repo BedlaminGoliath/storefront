@@ -9,7 +9,6 @@ function Categories() {
   return(
     <>
     <Grid container direction="row" justifycontent="space-around" alignItems="Center">
-
       {products.map((products)=> {
         <Grid xs={5}>
         <Products product={products}/>
