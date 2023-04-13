@@ -20,6 +20,26 @@ const PRODUCTS = [
         setActiveCategory: (state, action)=>{
             state.activeCategory = action.payload;
         },
+        decreaseStock: (state, action)=>{
+          const updated = state.products.map((product)=>{
+            if(product.name===action.payload){
+              return{...product, inStock: product.inStock-1};
+            } else{
+              return product;
+            }
+          });
+          state.products = updated;
+        },
+        increasedStock: (state, action)=>{
+          const updated = state.products.map((product)=>{
+            if(product.name === action.payload){
+              return{...product, inStock: product.inStock+1}
+            } else {
+              return product
+            }
+          });
+          state.products = updated;
+        },
     },
   });
 

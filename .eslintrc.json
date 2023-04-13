@@ -16,6 +16,7 @@
     },
     "rules": {
       "no-console": "off",
-      "no-unused-vars": [1, { "vars": "local", "args": "none" }]
+      "no-unused-vars": [1, { "vars": "local", "args": "none" }],
+      "react/prop-types": "off"
     }
   }
