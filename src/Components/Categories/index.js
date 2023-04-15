@@ -1,24 +1,28 @@
 import React from "react";
 import Products from "../Products";
 import { useSelector } from "react-redux";
-import { filteredProducts } from "../../store/products";
-import Grid from "@mui/material/Grid"
+import {  filteredProducts } from "../../store/products";
+import Grid from "@mui/material/Unstable_Grid2";
 
-function Categories() {
+const Categories=()=> {
   const products = useSelector(filteredProducts);
+  // const dispatch = useDispatch();
+
+  // useEffect(()=> {
+  //   dispatch(display());
+  // },[]);
+
   return(
     <>
-    <Grid container direction="row" justifycontent="space-around" alignItems="Center">
-      {products.map((products)=> {
-        <Grid xs={5}>
-        <Products product={products}/>
-      </Grid>
+    <Grid container spacing={2} sx={{my:2}}>
+      {products.map((item)=> {
+        <Grid xs={3}>
+          <Products product={item}/>
+        </Grid>
       })}
     </Grid>
       </>
-  )
-
-  
-}
+  );  
+};
 
 export default Categories;
