@@ -6,6 +6,7 @@ import Grid from "@mui/material/Unstable_Grid2";
 
 const Categories=()=> {
   const products = useSelector(filteredProducts);
+
   // const dispatch = useDispatch();
 
   // useEffect(()=> {
@@ -14,12 +15,12 @@ const Categories=()=> {
 
   return(
     <>
-    <Grid container spacing={2} sx={{my:2}}>
-      {products.map((item)=> {
-        <Grid xs={3}>
+    <Grid container spacing={2} sx={{ my:2 }}>
+      {products.map((item)=> (
+        <Grid key={item} xs={4}>
           <Products product={item}/>
-        </Grid>
-      })}
+    </Grid>
+      ))}
     </Grid>
       </>
   );  

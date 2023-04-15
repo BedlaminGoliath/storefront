@@ -4,10 +4,11 @@ import React from 'react'
 function Footer() {
   return (
 
-    <BottomNavigation>
+    <BottomNavigation sx={{ backgroundColor: "#3a889c", bottom:0}}>
       <Typography
-          variant="h4"
+          variant="h6"
           noWrap
+          component="a"
           href="/"
           sx={{
             mr: 2,
