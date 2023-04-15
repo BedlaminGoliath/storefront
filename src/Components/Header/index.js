@@ -9,6 +9,7 @@ import { categories } from "../../store/categories/index";
 import { useDispatch, useSelector } from "react-redux";
 import productSlice from "../../store/products";
 import SimpleCart from "../SimpleCart";
+import cache from "./shopping.png"
 
 const Header = () => {
   //useState for cart modal
@@ -22,14 +23,15 @@ const Header = () => {
   });
 
   return(
-    <AppBar>
+    <AppBar position="static" sx={{ backgroundColor: "#5F8FB3" }}>
       <Container>
-        <Toolbar>
-          <Typography variant="h1" gutterBottom>
+        <Toolbar disableGutters>
+          <img src={cache} alt="squirrel" style={{ width:"600px" ,marginRight: "30px"}}/>
+          <Typography role="header" variant="h1" sx={{ mt: -1, mr: 2, display:{ xs: "none", md: "flex"}, fontFamily:'Roboto', fontWeight:700,color:"inherit" }}>
             The Cache
           </Typography>
 
-          <Box>
+          <Box sx={{ flexGrow:1 }}>
             {categories.map((category)=> (
               <Button
                    variant="h4"
@@ -39,15 +41,16 @@ const Header = () => {
                    fontWeight: 800,
                    display: "block",
                      my: 3,
+                     ml: -1.5
                     }}
                     onClick={()=>{
                        dispatch(productSlice.actions.setActiveCategory(category.name));
                     }}>
-              {category.displayName}
+             {category.displayName}
             </Button>
             ))}
-          <Button key="cart" onClick={handleOpen}>Shopping Cart({items.numberOfItems}) </Button>
           </Box>
+          <Button key="cart" onClick={handleOpen}>Shopping Cart({items.it}) </Button>
 
           <SimpleCart handleOpen={handleOpen} handleClose={handleClose} open={open}/>
 

@@ -6,16 +6,16 @@ const cartSlice = createSlice({
     name: "cart",
     initialState: {
         cartItems: [],
-        numberOfItems: 0
+        numberOfItems: 0,
     },
 
     reducers: {
         addItem: (state, action)=>{
-            let product = action.payload;
+            
             //updates state while items get added
             state.numberOfItems++;
-            state.cartItems.push(product);
-        },
+            state.cartItems.push(action.payload);
+        }
         // removeItem: (state, action)=>{
         //     const inde
         // }
