@@ -10,7 +10,7 @@ const cartSlice = createSlice({
     },
 
     reducers: {
-        addItem: (state, action)=>{
+        addCartItem: (state, action)=>{
             
             //updates state while items get added
             state.numberOfItems++;
