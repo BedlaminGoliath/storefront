@@ -48,6 +48,7 @@ const SimpleCart =
                     <Button 
                     onClick={()=> {
                         dispatch(productSlice.actions.increasedStock(item.name));
+                        dispatch(cartSlice.actions.removeItem(item));
                     }}
                     >
                         Remove

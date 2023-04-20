@@ -15,10 +15,12 @@ const cartSlice = createSlice({
             //updates state while items get added
             state.numberOfItems++;
             state.cartItems.push(action.payload);
+        },
+        removeItem: (state, action)=>{
+            const index = state.cartItems.indexOf(action.payload);
+            state.cartItems.splice(index,1);
+            state.numberOfItems--;
         }
-        // removeItem: (state, action)=>{
-        //     const inde
-        // }
     }
 });
 

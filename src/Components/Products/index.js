@@ -22,11 +22,12 @@ const Products = ( {product} ) => {
             image={product.image}
              alt={product.name}/>
             <Typography variant="body2" color="text.secondary">
-              <p>Price: {product.price}</p>
-              <p>In Stock ? :{product.inStock}</p>
+              <p>Price:{product.price}</p>
+              <p>In Stock:{product.inStock}</p>
             <Button
-            onClick={()=> {dispatch(productSlice.actions.decreaseStock(product.name));
-                            dispatch(cartSlice.actions.addCartItem(product))
+            onClick={()=> {
+              dispatch(productSlice.actions.decreaseStock(product.name));
+              dispatch(cartSlice.actions.addCartItem(product))
             }}
             >
               Add Item to Cart
