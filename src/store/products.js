@@ -1,4 +1,7 @@
 import {createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { ContentPasteSearcgedOutlined } from "@mui/icons-material";
+
+// import { ContentPasteSearchOutlined } from "@mui/icons-material";
 // import apple from "./imgs/catApple.png"
 // import radio from "./imgs/radio.png"
 // import socks from "./imgs/socks.png"
@@ -31,6 +34,7 @@ import {createAsyncThunk, createSlice } from "@reduxjs/toolkit";
     initialState: {
         products: [],
         activeCategory: undefined,
+        selectedProduct: {}
     },
     reducers:{
         setActiveCategory: (state, action)=>{
@@ -56,6 +60,9 @@ import {createAsyncThunk, createSlice } from "@reduxjs/toolkit";
           });
           state.products = updated;
         },
+        setProduct: (state,action)=>{
+          state.selectedProduct = state.product[action.payload];
+        }
     },
      extraReducers: (builder)=> {
        builder.addCase(display.fulfilled, (state, {payload})=> {state.products = payload});
