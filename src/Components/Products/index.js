@@ -1,12 +1,13 @@
 import React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import { CardMedia } from "@mui/material";
+import  {CardMedia}  from "@mui/material";
 import  Typography  from '@mui/material/Typography';
 import { useDispatch } from "react-redux";
-import Button  from "@mui/material/Button";
+import {Button}  from "@mui/material";
 import productSlice from "../../store/products";
 import cartSlice from "../../store/cart";
+import {Link} from "react-router-dom";
 
 
 const Products = ( {product} ) => {
@@ -22,8 +23,11 @@ const Products = ( {product} ) => {
             image={product.image}
              alt={product.name}/>
             <Typography variant="body2" color="text.secondary">
-              <p>Price:{product.price}</p>
+              <p>Price:${product.price}</p>
               <p>In Stock:{product.inStock}</p>
+              <Link to={`/products/${product._id}`} onClick={()=> {
+                dispatch(productSlice.actions.setProduct(product._id))
+              }}>Product Details</Link>
             <Button
             onClick={()=> {
               dispatch(productSlice.actions.decreaseStock(product.name));

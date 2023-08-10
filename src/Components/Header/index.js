@@ -16,7 +16,6 @@ const Header = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen =()=>setOpen(true);
   const handleClose=()=>setOpen(false);
-
   const dispatch = useDispatch();
   const items = useSelector((state)=>{
     return state.cart;
@@ -24,7 +23,7 @@ const Header = () => {
 
   return(
     <AppBar position="static" sx={{ backgroundColor: "#5F8FB3" }}>
-      <Container>
+      <Container maxWidth="xl">
         <Toolbar disableGutters>
           <img src={cache} alt="squirrel" style={{ width:"600px" ,marginRight: "30px"}}/>
           <Typography role="header" variant="h1" sx={{ mt: -1, mr: 2, display:{ xs: "none", md: "flex"}, fontFamily:'Roboto', fontWeight:700,color:"inherit" }}>
@@ -50,7 +49,7 @@ const Header = () => {
             </Button>
             ))}
           </Box>
-          <Button key="cart" onClick={handleOpen}>Shopping Cart({items.it}) </Button>
+          <Button key="cart" onClick={handleOpen}>Shopping Cart({items.numberOfItems}) </Button>
 
           <SimpleCart handleOpen={handleOpen} handleClose={handleClose} open={open}/>
 

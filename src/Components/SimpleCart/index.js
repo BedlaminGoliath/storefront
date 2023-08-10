@@ -1,11 +1,11 @@
 import * as React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Modal } from "@mui/material";
-import { Typography } from "@mui/material";
-import { Button }  from "@mui/material";
+import { Modal }  from "@mui/material";
+import  {Typography}  from "@mui/material";
+import  {Button}   from "@mui/material";
 import cartSlice from "../../store/cart";
 import productSlice from "../../store/products";
-import { Box } from "@mui/material"
+import  {Box}  from "@mui/material"
 
 const style = {
     position: "absolute",
@@ -43,8 +43,8 @@ const SimpleCart =
 
                 {cart.cartItems.map((item)=> (
                 <>
-                    <Typography variant="h3" component="h2"><p>{item.name}</p></Typography>
-                    <Typography sc = {{ mt:2}}><p>${item.price}</p></Typography>
+                    <Typography variant="h3" component="h2">{item.name}</Typography>
+                    <Typography sx={{ mt:2}}><p>${item.price}</p></Typography>
                     <Button 
                     onClick={()=> {
                         dispatch(productSlice.actions.increasedStock(item.name));

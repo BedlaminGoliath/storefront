@@ -20,8 +20,8 @@ const cartSlice = createSlice({
             const index = state.cartItems.indexOf(action.payload);
             state.cartItems.splice(index,1);
             state.numberOfItems--;
-        }
-    }
+        },
+    },
 });
 
 export default cartSlice;
