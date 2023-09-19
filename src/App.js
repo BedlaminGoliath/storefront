@@ -10,16 +10,14 @@ import Layout from "./Components/Layout";
 import ProductDetails from "./Components/ProductDetails";
 const App =()=> {
   return (
-      <>
-      <BrowserRouter>
-        <Routes>
-          <Route element={<Layout/>} errorElement={<Error/>}/>
-          <Route path="/" element={<Storefront/>}/>
-          <Route path="/products/:id" element={<ProductDetails />} />
-        </Routes>
-      </BrowserRouter>
-     </>
-  );
+    
+    <>
+      <Header/>
+      <Categories/>
+      <Footer/>
+    </>
+  )
+  
 }
 
 export default App;
