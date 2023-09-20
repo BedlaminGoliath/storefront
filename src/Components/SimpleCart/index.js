@@ -19,12 +19,7 @@ const style = {
   };
   
 
-const SimpleCart =
- (
-    // { open, handleClose}
-    props
-    ) => {
-
+const SimpleCart=(props) => {
     const dispatch = useDispatch();
     const cart = useSelector((state)=> { return state.cart});
 
