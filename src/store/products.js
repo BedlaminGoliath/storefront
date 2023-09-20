@@ -1,14 +1,15 @@
-import {createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { ContentPasteSearcgedOutlined } from "@mui/icons-material";
+import {createSlice } from "@reduxjs/toolkit";
+
 
 // import { ContentPasteSearchOutlined } from "@mui/icons-material";
-// import apple from "./imgs/catApple.png"
-// import radio from "./imgs/radio.png"
-// import socks from "./imgs/socks.png"
-// import tv from "./imgs/television.png"
-// import shirt from "./imgs/tshirt.png"
-// import bread from "./imgs/bread.png"
-// import eggs from "./imgs/eggs.png"
+
+import apple from "./imgs/catApple.png"
+import radio from "./imgs/radio.png"
+import socks from "./imgs/socks.png"
+import tv from "./imgs/television.png"
+import shirt from "./imgs/tshirt.png"
+import bread from "./imgs/bread.png"
+import eggs from "./imgs/eggs.png"
 
 
 const PRODUCTS = [
@@ -38,5 +39,6 @@ const PRODUCTS = [
     product: { activeCategory, products }})=>
     activeCategory 
     ? products.filter((product)=> product.category===activeCategory): products;
+
 
     export default productSlice;
