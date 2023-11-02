@@ -32,7 +32,29 @@ const PRODUCTS = [
         setActiveCategory: (state, action)=>{
             state.activeCategory = action.payload;
         },
-    },
+
+        decreaseStock: (state, action)=>{
+          const updatedProducts = state.products.map((item)=>{
+            if(item.name === action.payload){
+              return{...item, inStock: item.inStock -1 };
+            } else {
+              return item;
+            }
+          });
+          state.products = updatedProducts;
+        },
+        
+        increaseStock: (state, action)=>{
+          const  updatedProducts = state.products.map((item)=>{
+            if(item.name=== action.payload){
+              return{...item, inStock: item.inStock + 1};
+            } else {
+              return item;
+            }
+          });
+          state.products = updatedProducts;
+        },
+     },
   });
   
   export const filteredProducts = ({
